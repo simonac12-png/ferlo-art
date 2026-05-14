@@ -12,6 +12,19 @@ export function Hero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="flex-1 text-center lg:text-left"
           >
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className="mb-8 flex justify-center lg:justify-start"
+            >
+              <img
+                src="/ferlo-logo.png"
+                alt="FerLo"
+                className="h-16 md:h-20 w-auto object-contain"
+                data-testid="hero-logo"
+              />
+            </motion.div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground mb-6 leading-[1.1]">
               Where children's <br className="hidden md:block" />
               <span className="text-primary italic">creations</span> come to life
