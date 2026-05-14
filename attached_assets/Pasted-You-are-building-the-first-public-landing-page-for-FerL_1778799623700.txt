@@ -1,0 +1,162 @@
+You are building the first public landing page for FerLo at ferlo.art.
+
+FerLo is an early-stage AI product where children’s handcrafted creations — drawings, clay figures, natural-material builds, crafts, and other physical art — are transformed into beautiful story characters. These characters then help tell gentle, personalized stories that teach children about imagination, creativity, and AI.
+
+The website must feel:
+- premium but warm
+- joyful and magical
+- trustworthy for parents
+- inspiring for children
+- startup/investor-ready
+- clean, modern, and emotionally memorable
+
+Do not make it look like a generic AI SaaS website. FerLo is where children’s art meets AI.
+
+Core brand message:
+“Where children’s creations come to life.”
+
+Secondary message:
+“FerLo turns handcrafted childhood creations into magical characters, personalized stories, and gentle AI learning experiences.”
+
+Build a polished responsive landing page with the following structure:
+
+1. HERO SECTION
+Create a strong first impression.
+
+Include:
+- FerLo logo/name
+- headline: “Where children’s creations come to life”
+- subheadline explaining that FerLo transforms children’s handmade art into story characters and personalized AI-powered stories
+- primary CTA: “Join the waitlist”
+- secondary CTA: “See how it works”
+- visual placeholder area for a beautiful before/after character transformation
+
+The hero should feel magical, soft, premium, and family-friendly.
+
+2. HOW IT WORKS SECTION
+Use a simple 3-step flow:
+
+Step 1: Upload a child’s creation
+Explain: drawing, clay, craft, nature build, or handmade project.
+
+Step 2: FerLo brings it to life
+Explain: AI transforms the creation into a faithful, beautiful character while preserving the child’s original shapes, imperfections, and personality.
+
+Step 3: Receive a personalized story
+Explain: the character stars in a gentle story that sparks imagination and helps children understand AI in an age-appropriate way.
+
+3. BEFORE / AFTER SHOWCASE
+Create a polished showcase section for child creation → generated character.
+
+I will add the images later, so use clean placeholders for now.
+
+Requirements:
+- support multiple showcase cards
+- each card should show “Original Creation” and “FerLo Character”
+- leave image placeholders easy to replace
+- include short caption text under each card
+- layout must work beautifully on mobile and desktop
+
+4. STORY EXAMPLES SECTION
+Create a section for short story examples.
+
+Use placeholder cards for now:
+- story title
+- character name
+- short story preview
+- lesson/theme, such as “What is AI?”, “Creativity”, “Kindness”, “Curiosity”, or “Problem solving”
+
+This section should make parents understand that FerLo is not just image generation — it is storytelling, education, and emotional connection.
+
+5. MISSION SECTION
+Include FerLo’s mission:
+
+FerLo brings children’s handcrafted creations to life through AI-powered characters and stories. It helps children feel proud of their imagination while gently teaching them what AI is, how it works, and how it can support human creativity.
+
+Tone: inspiring, warm, thoughtful, not corporate.
+
+6. FUTURE VISION SECTION
+Add a tasteful “Coming next” section.
+
+Include:
+- narrated stories in the child’s voice
+- multilingual story generation
+- animated short stories / cartoon videos
+- family story library
+
+This should feel visionary but credible.
+
+7. WAITLIST SECTION
+Create a beautiful waitlist form.
+
+Fields:
+- parent name
+- email
+- child age range
+- optional message
+
+CTA button:
+“Join the FerLo waitlist”
+
+For now, implement the form front-end only. Add clear TODO comments where backend/email integration should be added later.
+
+8. FOOTER
+Include:
+- FerLo
+- tagline: “Where art meets AI”
+- links placeholders: About, Privacy, Contact, Instagram
+- copyright
+
+DESIGN DIRECTION
+Use a refined visual style:
+- warm off-white or cream background
+- soft pastel accents
+- subtle gold/luxury feeling
+- rounded cards
+- gentle shadows
+- elegant spacing
+- playful but premium typography
+- mobile-first responsive layout
+- subtle animations if supported
+- no clutter
+- no harsh neon AI aesthetic
+
+The page should appeal to:
+- parents
+- children
+- caregivers
+- early investors
+- potential partners
+
+TECHNICAL REQUIREMENTS
+- Build using the current Replit project stack.
+- Keep the code clean and easy to edit.
+- Use reusable components where helpful.
+- Put image placeholders in a clear folder or component structure so I can replace them later.
+- Add comments showing exactly where I should insert:
+  - before/after showcase images
+  - story example content
+  - logo assets
+  - waitlist backend integration
+- Ensure the site is deployable later to GitHub and Vercel.
+- Do not use paid services.
+- Do not add complex backend logic yet unless the current project already supports it.
+
+IMPORTANT BRAND PRINCIPLES
+FerLo must preserve the child’s original creation. Do not describe the AI as redesigning or replacing the child’s art. It should bring the child’s creation to life while respecting its imperfections, handmade identity, asymmetry, and emotional charm.
+
+Avoid language like:
+- “perfect your child’s drawing”
+- “fix the artwork”
+- “make it professional”
+- “generate random characters”
+
+Use language like:
+- “preserve the magic”
+- “bring their creation to life”
+- “honor every handmade detail”
+- “turn imagination into a story”
+- “where art meets AI”
+
+FINAL OUTPUT EXPECTED
+Create the full first version of the FerLo landing page with polished UI, responsive layout, placeholder content, and clean structure ready for me to customize with real images and stories.
