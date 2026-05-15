@@ -3,19 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <title>FerLo</title>
+    <title>FerLo — Where children's creations come to life</title>
     <meta name="description" content="FerLo turns children's handcrafted creations into magical story characters and personalized AI-powered stories. Where children's art meets AI." />
     <meta name="robots" content="index, follow" />
     <meta property="og:title" content="FerLo — Where children's creations come to life" />
     <meta property="og:description" content="FerLo transforms children's handmade art — drawings, clay, crafts — into beautiful story characters and gentle personalized stories that honor every handmade detail." />
     <meta property="og:type" content="website" />
+    <meta property="og:image" content="/ferlo-logo.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="FerLo — Where children's creations come to life" />
     <meta name="twitter:description" content="FerLo transforms children's handmade art — drawings, clay, crafts — into beautiful story characters and gentle personalized stories that honor every handmade detail." />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="twitter:image" content="/ferlo-logo.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/icon-16.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="/icon-192.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,700&display=swap" rel="stylesheet">
+    <script>
+      (function() {
+        var stored = localStorage.getItem('ferlo-theme');
+        if (stored === 'dark') {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
