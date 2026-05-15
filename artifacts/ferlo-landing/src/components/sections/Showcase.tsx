@@ -46,7 +46,7 @@ export function Showcase() {
             >
               <div className="bg-card rounded-3xl p-4 shadow-sm border border-border mb-6 overflow-hidden">
                 <div className={`aspect-[4/3] rounded-2xl bg-gradient-to-br ${showcase.beforeGradient} flex items-center justify-center relative overflow-hidden mb-4`}>
-                  <img src={showcase.beforeImage} alt="Original artwork" className="w-full h-full object-cover" />
+                  <img src="/showcase-ferdi-original.jpg" alt="Original artwork" className="w-full h-full object-cover" />
                 </div>
 
                 <div className="flex justify-center -mt-8 mb-2 relative z-20">
