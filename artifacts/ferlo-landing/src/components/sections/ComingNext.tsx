@@ -13,7 +13,7 @@ export function ComingNext() {
   ];
 
   return (
-    <section className="py-24 bg-foreground text-background">
+    <section className="py-24 bg-foreground dark:bg-muted/40 text-background dark:text-foreground">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="flex flex-col md:flex-row items-center gap-16">
           <motion.div
@@ -23,8 +23,8 @@ export function ComingNext() {
             transition={{ duration: 0.6 }}
             className="flex-1 max-w-xl"
           >
-            <h2 className="text-4xl font-bold mb-6 text-white">Coming Next</h2>
-            <p className="text-xl text-background/70 mb-8 font-light">
+            <h2 className="text-4xl font-bold mb-6 text-background dark:text-foreground">Coming Next</h2>
+            <p className="text-xl text-background/70 dark:text-foreground/70 mb-8 font-light">
               We are building a magical platform that grows with your child's
               creativity. This is just the beginning.
             </p>
@@ -41,14 +41,14 @@ export function ComingNext() {
               {items.map((item, index) => (
                 <li
                   key={index}
-                  className="flex items-start gap-4 pb-6 border-b border-background/10 last:border-0 last:pb-0"
+                  className="flex items-start gap-4 pb-6 border-b border-background/10 dark:border-foreground/10 last:border-0 last:pb-0"
                 >
                   <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 flex-shrink-0" />
                   <div>
-                    <h3 className="text-lg font-bold text-white mb-1">
+                    <h3 className="text-lg font-bold text-background dark:text-foreground mb-1">
                       {item.title}
                     </h3>
-                    <p className="text-background/60">{item.description}</p>
+                    <p className="text-background/60 dark:text-foreground/60">{item.description}</p>
                   </div>
                 </li>
               ))}
