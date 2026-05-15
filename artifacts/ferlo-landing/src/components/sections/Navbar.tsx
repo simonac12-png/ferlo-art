@@ -52,7 +52,7 @@ export function Navbar() {
       <div className="container mx-auto px-4 sm:px-6 flex items-center justify-between">
         <a href="#" className="flex items-center gap-2">
           <img
-            src="/ferlo-logo.png"
+            src="/ferlo-favicon.png"
             alt="FerLo Logo"
             className="h-8 md:h-10 dark:brightness-110"
           />
