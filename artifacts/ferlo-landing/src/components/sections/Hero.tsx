@@ -56,7 +56,7 @@ export function Hero() {
             transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
             className="flex-1 w-full max-w-lg lg:max-w-none relative"
           >
-            <div className="relative aspect-square md:aspect-[4/3] lg:aspect-square rounded-3xl overflow-hidden bg-gradient-to-tr from-primary/10 to-secondary/10 border border-border/50 shadow-2xl flex items-center justify-center p-3">
+            <div className="relative aspect-[3/4] md:aspect-[4/3] lg:aspect-[3/4] rounded-3xl overflow-hidden bg-gradient-to-tr from-primary/10 to-secondary/10 border border-border/50 shadow-2xl flex items-center justify-center p-3">
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/20 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-70 animate-blob"></div>
                 <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-secondary/20 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
@@ -64,8 +64,8 @@ export function Hero() {
               </div>
 
               <div className="relative z-10 w-full h-full flex items-center justify-center gap-3">
-                <div className="flex-1 h-full bg-card rounded-2xl shadow-lg border border-border overflow-hidden">
-                  <img src="/child-drawing.jpg" alt="Child's original drawing" className="w-full h-full object-cover" />
+                <div className="flex-1 h-full bg-muted/30 rounded-2xl shadow-lg border border-border overflow-hidden flex items-center justify-center">
+                  <img src="/child-drawing.jpg" alt="Child's original drawing" className="w-full h-full object-contain" />
                 </div>
 
                 <div className="w-10 h-10 shrink-0 rounded-full bg-card shadow flex items-center justify-center text-primary z-20 border border-border">
@@ -74,8 +74,8 @@ export function Hero() {
                   </svg>
                 </div>
 
-                <div className="flex-1 h-full bg-card rounded-2xl shadow-lg border border-border overflow-hidden">
-                  <img src="/ferlo-character.jpg" alt="FerLo Character" className="w-full h-full object-cover" />
+                <div className="flex-1 h-full bg-muted/30 rounded-2xl shadow-lg border border-border overflow-hidden flex items-center justify-center">
+                  <img src="/ferlo-character.jpg" alt="FerLo Character" className="w-full h-full object-contain" />
                 </div>
               </div>
             </div>
