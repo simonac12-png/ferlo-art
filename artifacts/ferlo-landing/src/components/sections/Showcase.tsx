@@ -14,7 +14,7 @@ export function Showcase() {
       afterGradient: "from-secondary/10 to-primary/10"
     },
     {
-      caption: "Maya's watercolor monster became a friendly giant",
+      caption: "Ferdi's watercolor monster became a friendly giant",
       beforeGradient: "from-amber-100/80 to-orange-50/80 dark:from-amber-900/30 dark:to-orange-900/20",
       afterGradient: "from-accent/10 to-primary/10"
     }
