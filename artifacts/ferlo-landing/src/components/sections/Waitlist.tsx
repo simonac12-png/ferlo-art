@@ -46,16 +46,13 @@ export function Waitlist() {
   });
 
   const onSubmit = async (data: WaitlistValues) => {
-    // TODO: Connect to backend/email service (e.g. Resend, SendGrid, or Mailchimp)
     console.log('Waitlist submission:', data);
-    
-    // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 800));
     setIsSubmitted(true);
   };
 
   return (
-    <section id="waitlist" className="py-32 bg-[#fdf8f2] relative overflow-hidden">
+    <section id="waitlist" className="py-32 bg-muted/30 dark:bg-muted/10 relative overflow-hidden">
       <div className="absolute inset-0 z-0">
         <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent"></div>
         <div className="absolute bottom-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-secondary/10 via-transparent to-transparent"></div>
@@ -68,7 +65,7 @@ export function Waitlist() {
             <p className="text-lg text-muted-foreground">Join our pre-launch waitlist. Spaces are limited as we carefully craft our first stories.</p>
           </div>
 
-          <div className="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-border">
+          <div className="bg-card rounded-3xl p-8 md:p-12 shadow-sm border border-border">
             <AnimatePresence mode="wait">
               {!isSubmitted ? (
                 <motion.div
@@ -141,10 +138,10 @@ export function Waitlist() {
                           <FormItem>
                             <FormLabel className="text-foreground">Tell us about your child's creations <span className="text-muted-foreground font-normal">(Optional)</span></FormLabel>
                             <FormControl>
-                              <Textarea 
-                                placeholder="Do they like drawing monsters? Building with blocks?" 
-                                className="resize-none min-h-[100px] bg-background/50 border-input focus:border-primary" 
-                                {...field} 
+                              <Textarea
+                                placeholder="Do they like drawing monsters? Building with blocks?"
+                                className="resize-none min-h-[100px] bg-background/50 border-input focus:border-primary"
+                                {...field}
                                 data-testid="input-message"
                               />
                             </FormControl>
@@ -153,9 +150,9 @@ export function Waitlist() {
                         )}
                       />
 
-                      <Button 
-                        type="submit" 
-                        className="w-full h-14 text-lg rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground shadow-sm transition-all"
+                      <Button
+                        type="submit"
+                        className="w-full h-14 text-lg rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground shadow-sm transition-all font-semibold"
                         disabled={form.formState.isSubmitting}
                         data-testid="button-submit-waitlist"
                       >

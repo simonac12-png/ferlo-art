@@ -27,7 +27,7 @@ export function StoryExamples() {
   ];
 
   return (
-    <section className="py-24 bg-[#fdf8f2]">
+    <section className="py-24 bg-muted/30 dark:bg-muted/10">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">More than a picture</h2>
@@ -36,24 +36,24 @@ export function StoryExamples() {
 
         <div className="grid md:grid-cols-3 gap-8">
           {stories.map((story, index) => (
-            <motion.div 
+            <motion.div
               key={index}
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.15 }}
-              className="bg-white rounded-3xl p-8 shadow-sm border border-border flex flex-col h-full hover:shadow-md transition-shadow"
+              className="bg-card rounded-3xl p-8 shadow-sm border border-border flex flex-col h-full hover:shadow-md transition-shadow"
             >
               <div className="mb-6 flex justify-between items-start">
                 <div>
                   <h3 className="text-2xl font-bold text-foreground mb-2 leading-tight">{story.title}</h3>
-                  <div className="inline-block px-3 py-1 bg-accent/10 text-accent-foreground text-xs font-semibold rounded-full border border-accent/20">
+                  <div className="inline-block px-3 py-1 bg-accent/10 text-accent dark:text-accent-foreground text-xs font-semibold rounded-full border border-accent/20">
                     Theme: {story.theme}
                   </div>
                 </div>
               </div>
-              
-              <div className="mb-6 p-4 bg-muted/30 rounded-2xl border border-muted-border">
+
+              <div className="mb-6 p-4 bg-muted/40 rounded-2xl border border-border">
                 <p className="text-sm font-medium text-foreground">
                   Starring <span className="text-primary font-bold">{story.character}</span>
                 </p>
@@ -63,7 +63,6 @@ export function StoryExamples() {
               </div>
 
               <div className="flex-1">
-                {/* TODO: Replace with real story content */}
                 <p className="text-muted-foreground leading-relaxed italic relative">
                   <span className="text-3xl text-primary/30 absolute -top-2 -left-2">"</span>
                   <span className="relative z-10">{story.preview}</span>

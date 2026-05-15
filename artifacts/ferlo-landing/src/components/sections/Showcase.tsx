@@ -5,15 +5,18 @@ export function Showcase() {
   const showcases = [
     {
       caption: "Luna's clay rabbit became a brave forest guardian",
-      color: "from-green-100 to-emerald-50"
+      beforeGradient: "from-emerald-100/80 to-green-50/80 dark:from-emerald-900/30 dark:to-green-900/20",
+      afterGradient: "from-primary/10 to-secondary/10"
     },
     {
       caption: "Sam's cardboard spaceship became a real explorer",
-      color: "from-blue-100 to-sky-50"
+      beforeGradient: "from-sky-100/80 to-blue-50/80 dark:from-sky-900/30 dark:to-blue-900/20",
+      afterGradient: "from-secondary/10 to-primary/10"
     },
     {
       caption: "Maya's watercolor monster became a friendly giant",
-      color: "from-orange-100 to-amber-50"
+      beforeGradient: "from-amber-100/80 to-orange-50/80 dark:from-amber-900/30 dark:to-orange-900/20",
+      afterGradient: "from-accent/10 to-primary/10"
     }
   ];
 
@@ -27,7 +30,7 @@ export function Showcase() {
 
         <div className="grid md:grid-cols-3 gap-8">
           {showcases.map((showcase, index) => (
-            <motion.div 
+            <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -35,26 +38,24 @@ export function Showcase() {
               transition={{ duration: 0.6, delay: index * 0.15 }}
               className="group"
             >
-              <div className="bg-white rounded-3xl p-4 shadow-sm border border-border mb-6 overflow-hidden">
-                <div className={`aspect-[4/3] rounded-2xl bg-gradient-to-br ${showcase.color} flex flex-col items-center justify-center relative overflow-hidden mb-4`}>
-                  {/* TODO: Replace placeholder with real before image */}
-                  <div className="w-24 h-24 border-2 border-dashed border-black/10 rounded-xl flex items-center justify-center bg-white/30 backdrop-blur-sm z-10">
-                    <span className="text-sm font-medium text-black/40 text-center px-2">Original</span>
+              <div className="bg-card rounded-3xl p-4 shadow-sm border border-border mb-6 overflow-hidden">
+                <div className={`aspect-[4/3] rounded-2xl bg-gradient-to-br ${showcase.beforeGradient} flex flex-col items-center justify-center relative overflow-hidden mb-4`}>
+                  <div className="w-24 h-24 border-2 border-dashed border-foreground/10 rounded-xl flex items-center justify-center bg-card/30 backdrop-blur-sm z-10">
+                    <span className="text-sm font-medium text-muted-foreground text-center px-2">Original</span>
                   </div>
                 </div>
-                
+
                 <div className="flex justify-center -mt-8 mb-2 relative z-20">
-                  <div className="w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center border border-border text-primary">
+                  <div className="w-10 h-10 bg-card rounded-full shadow-md flex items-center justify-center border border-border text-primary">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </div>
                 </div>
 
-                <div className={`aspect-[4/3] rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 flex flex-col items-center justify-center relative overflow-hidden`}>
-                  {/* TODO: Replace placeholder with real after image */}
-                  <div className="w-32 h-32 border border-primary/20 rounded-xl flex items-center justify-center bg-white/60 backdrop-blur-md z-10 shadow-lg">
-                    <span className="text-sm font-medium text-primary text-center px-2">Character</span>
+                <div className={`aspect-[4/3] rounded-2xl bg-gradient-to-br ${showcase.afterGradient} flex flex-col items-center justify-center relative overflow-hidden`}>
+                  <div className="w-32 h-32 border border-primary/20 rounded-xl flex items-center justify-center bg-card/60 backdrop-blur-md z-10 shadow-lg">
+                    <span className="text-sm font-semibold text-primary text-center px-2">Character</span>
                   </div>
                 </div>
               </div>
