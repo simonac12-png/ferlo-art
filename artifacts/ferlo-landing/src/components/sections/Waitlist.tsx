@@ -46,7 +46,10 @@ export function Waitlist() {
   });
 
   const onSubmit = async (data: WaitlistValues) => {
+    // TODO: Connect to backend/email service (e.g. Resend, SendGrid, or Mailchimp)
     console.log('Waitlist submission:', data);
+
+    // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 800));
     setIsSubmitted(true);
   };
