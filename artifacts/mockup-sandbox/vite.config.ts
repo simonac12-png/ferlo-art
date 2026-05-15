@@ -5,11 +5,10 @@ import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 import { mockupPreviewPlugin } from "./mockupPreviewPlugin";
 
-const rawPort = process.env.PORT ?? "8081";
-const port = Number(rawPort);
-
-if (Number.isNaN(port) || port <= 0) {
-  throw new Error(`Invalid PORT value: "${rawPort}"`);
+// Port is provided at runtime; fallback for build
+let port = Number(process.env.PORT);
+if (!Number.isFinite(port) || port <= 0) {
+  port = 8081;
 }
 
 const basePath = process.env.BASE_PATH ?? "/__mockup";
