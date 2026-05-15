@@ -6,17 +6,23 @@ export function Showcase() {
     {
       caption: "Luna's clay rabbit became a brave forest guardian",
       beforeGradient: "from-emerald-100/80 to-green-50/80 dark:from-emerald-900/30 dark:to-green-900/20",
-      afterGradient: "from-primary/10 to-secondary/10"
+      afterGradient: "from-primary/10 to-secondary/10",
+      beforeImage: "/showcase-luna-original.jpg",
+      afterImage: "/showcase-luna-character.png"
     },
     {
       caption: "Sam's cardboard spaceship became a real explorer",
       beforeGradient: "from-sky-100/80 to-blue-50/80 dark:from-sky-900/30 dark:to-blue-900/20",
-      afterGradient: "from-secondary/10 to-primary/10"
+      afterGradient: "from-secondary/10 to-primary/10",
+      beforeImage: "/showcase-sam-original.jpg",
+      afterImage: "/showcase-sam-character.png"
     },
     {
       caption: "Ferdi's watercolor monster became a friendly giant",
       beforeGradient: "from-amber-100/80 to-orange-50/80 dark:from-amber-900/30 dark:to-orange-900/20",
-      afterGradient: "from-accent/10 to-primary/10"
+      afterGradient: "from-accent/10 to-primary/10",
+      beforeImage: "/showcase-ferdi-original.jpg",
+      afterImage: "/showcase-ferdi-character.png"
     }
   ];
 
@@ -40,7 +46,7 @@ export function Showcase() {
             >
               <div className="bg-card rounded-3xl p-4 shadow-sm border border-border mb-6 overflow-hidden">
                 <div className={`aspect-[4/3] rounded-2xl bg-gradient-to-br ${showcase.beforeGradient} flex items-center justify-center relative overflow-hidden mb-4`}>
-                  <img src="/showcase-original.jpg" alt="Original artwork" className="w-full h-full object-cover" />
+                  <img src={showcase.beforeImage} alt="Original artwork" className="w-full h-full object-cover" />
                 </div>
 
                 <div className="flex justify-center -mt-8 mb-2 relative z-20">
@@ -52,7 +58,7 @@ export function Showcase() {
                 </div>
 
                 <div className={`aspect-[4/3] rounded-2xl bg-gradient-to-br ${showcase.afterGradient} flex items-center justify-center relative overflow-hidden`}>
-                  <img src="/showcase-character.png" alt="FerLo character" className="w-full h-full object-cover" />
+                  <img src={showcase.afterImage} alt="FerLo character" className="w-full h-full object-cover" />
                 </div>
               </div>
               <p className="text-center text-muted-foreground font-medium px-4">
