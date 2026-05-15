@@ -69,8 +69,8 @@ export function Hero() {
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                   className="w-1/2 aspect-[3/4] bg-card rounded-2xl shadow-lg border border-border p-4 flex flex-col items-center justify-center"
                 >
-                  <div className="w-full h-full border-2 border-dashed border-muted-foreground/30 rounded-xl flex items-center justify-center bg-muted/30">
-                    <span className="text-muted-foreground font-medium text-center px-4">Original Creation</span>
+                  <div className="w-full h-full rounded-xl overflow-hidden">
+                    <img src="/child-drawing.jpg" alt="Child's original drawing" className="w-full h-full object-cover" />
                   </div>
                 </motion.div>
 
