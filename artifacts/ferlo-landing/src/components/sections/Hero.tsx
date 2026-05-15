@@ -57,7 +57,7 @@ export function Hero() {
             className="flex-1 w-full max-w-lg lg:max-w-none relative"
           >
             <div className="relative aspect-square md:aspect-[4/3] lg:aspect-square rounded-3xl overflow-hidden bg-gradient-to-tr from-primary/10 to-secondary/10 border border-border/50 shadow-2xl flex items-center justify-center p-8">
-              <div className="absolute inset-0 flex items-center justify-center">
+              <div className="absolute inset-0 flex items-center justify-center ml-[0px] mr-[0px]">
                 <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/20 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-70 animate-blob"></div>
                 <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-secondary/20 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
                 <div className="absolute bottom-1/4 left-1/3 w-64 h-64 bg-accent/20 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-70 animate-blob animation-delay-4000"></div>
@@ -67,7 +67,7 @@ export function Hero() {
                 <motion.div
                   animate={{ y: [0, -10, 0] }}
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                  className="w-1/2 aspect-[3/4] bg-card rounded-2xl shadow-lg border border-border p-4 flex flex-col items-center justify-center"
+                  className="w-1/2 aspect-[3/4] bg-card rounded-2xl shadow-lg border border-border p-4 flex flex-col items-center justify-center ml-[0px] mr-[0px] pl-[0px] pr-[0px] pt-[0px] pb-[0px]"
                 >
                   <div className="w-full h-full rounded-xl overflow-hidden">
                     <img src="/child-drawing.jpg" alt="Child's original drawing" className="w-full h-full object-cover" />
@@ -83,7 +83,7 @@ export function Hero() {
                 <motion.div
                   animate={{ y: [0, 10, 0] }}
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                  className="w-1/2 aspect-[3/4] bg-card rounded-2xl shadow-lg border border-border p-4 flex flex-col items-center justify-center relative overflow-hidden"
+                  className="w-1/2 aspect-[3/4] bg-card rounded-2xl shadow-lg border border-border p-4 flex flex-col items-center justify-center relative overflow-hidden pt-[0px] pb-[0px] pl-[0px] pr-[0px]"
                 >
                   <div className="w-full h-full rounded-xl overflow-hidden relative z-10">
                     <img src="/ferlo-character.jpg" alt="FerLo Character" className="w-full h-full object-cover" />
