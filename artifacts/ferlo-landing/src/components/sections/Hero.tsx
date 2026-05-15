@@ -85,9 +85,8 @@ export function Hero() {
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                   className="w-1/2 aspect-[3/4] bg-card rounded-2xl shadow-lg border border-border p-4 flex flex-col items-center justify-center relative overflow-hidden"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-secondary/5" />
-                  <div className="w-full h-full border border-primary/20 rounded-xl flex items-center justify-center bg-card/50 backdrop-blur relative z-10">
-                    <span className="text-primary font-semibold text-center px-4">FerLo Character</span>
+                  <div className="w-full h-full rounded-xl overflow-hidden relative z-10">
+                    <img src="/ferlo-character.jpg" alt="FerLo Character" className="w-full h-full object-cover" />
                   </div>
                 </motion.div>
               </div>
