@@ -51,10 +51,8 @@ export function Showcase() {
                   </div>
                 </div>
 
-                <div className={`aspect-[4/3] rounded-2xl bg-gradient-to-br ${showcase.afterGradient} flex flex-col items-center justify-center relative overflow-hidden`}>
-                  <div className="w-32 h-32 border border-primary/20 rounded-xl flex items-center justify-center bg-card/60 backdrop-blur-md z-10 shadow-lg">
-                    <span className="text-sm font-semibold text-primary text-center px-2">Character</span>
-                  </div>
+                <div className={`aspect-[4/3] rounded-2xl bg-gradient-to-br ${showcase.afterGradient} flex items-center justify-center relative overflow-hidden`}>
+                  <img src="/showcase-character.png" alt="FerLo character" className="w-full h-full object-cover" />
                 </div>
               </div>
               <p className="text-center text-muted-foreground font-medium px-4">
