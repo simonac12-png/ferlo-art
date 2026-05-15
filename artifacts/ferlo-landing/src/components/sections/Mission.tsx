@@ -16,7 +16,15 @@ export function Mission() {
             transition={{ duration: 0.6 }}
             className="flex justify-center mb-10"
           >
-            <img src="/ferlo-icon.png" alt="FerLo Icon" className="h-20 w-20 opacity-80 dark:brightness-110" />
+            <img
+              src="/ferlo-icon.png"
+              alt="FerLo Icon"
+              width={80}
+              height={80}
+              loading="lazy"
+              decoding="async"
+              className="h-20 w-20 opacity-80 dark:brightness-110"
+            />
           </motion.div>
 
           <motion.h2

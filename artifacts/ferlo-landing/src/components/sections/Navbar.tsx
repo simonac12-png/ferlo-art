@@ -54,7 +54,11 @@ export function Navbar() {
           <img
             src="/ferlo-favicon.png"
             alt="FerLo Logo"
-            className="h-8 md:h-10 dark:brightness-110"
+            width={40}
+            height={40}
+            loading="eager"
+            decoding="async"
+            className="h-8 md:h-10 w-auto dark:brightness-110"
           />
         </a>
 

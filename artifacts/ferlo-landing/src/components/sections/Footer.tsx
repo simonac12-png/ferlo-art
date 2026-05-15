@@ -8,7 +8,11 @@ export function Footer() {
           <img
             src="/ferlo-icon.png"
             alt="FerLo Icon"
-            className="h-10 opacity-80 hover:opacity-100 transition-opacity dark:brightness-110"
+            width={40}
+            height={40}
+            loading="lazy"
+            decoding="async"
+            className="h-10 w-auto opacity-80 hover:opacity-100 transition-opacity dark:brightness-110"
           />
         </a>
 

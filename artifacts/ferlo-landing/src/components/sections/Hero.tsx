@@ -21,6 +21,11 @@ export function Hero() {
               <img
                 src="/ferlo-logo.png"
                 alt="FerLo"
+                width={1021}
+                height={304}
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
                 className="h-16 md:h-20 w-auto object-contain dark:brightness-110"
                 data-testid="hero-logo"
               />
@@ -65,7 +70,16 @@ export function Hero() {
 
               <div className="relative z-10 w-full flex items-center gap-3">
                 <div className="flex-1 aspect-[3/4] bg-muted/30 rounded-2xl shadow-lg border border-border overflow-hidden">
-                  <img src="/child-drawing.jpg" alt="Child's original drawing" className="w-full h-full object-cover" />
+                  <img
+                    src="/child-drawing.jpg"
+                    alt="Child's original drawing"
+                    width={1200}
+                    height={1600}
+                    loading="eager"
+                    fetchPriority="high"
+                    decoding="async"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
 
                 <div className="w-10 h-10 shrink-0 rounded-full bg-card shadow flex items-center justify-center text-primary z-20 border border-border">
@@ -75,7 +89,16 @@ export function Hero() {
                 </div>
 
                 <div className="flex-1 aspect-[3/4] bg-muted/30 rounded-2xl shadow-lg border border-border overflow-hidden">
-                  <img src="/ferlo-character.jpg" alt="FerLo Character" className="w-full h-full object-cover" />
+                  <img
+                    src="/ferlo-character.jpg"
+                    alt="FerLo Character"
+                    width={1200}
+                    height={1800}
+                    loading="eager"
+                    fetchPriority="high"
+                    decoding="async"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
             </div>

@@ -34,6 +34,7 @@ type WaitlistValues = z.infer<typeof waitlistSchema>;
 
 export function Waitlist() {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const form = useForm<WaitlistValues>({
     resolver: zodResolver(waitlistSchema),
@@ -46,12 +47,21 @@ export function Waitlist() {
   });
 
   const onSubmit = async (data: WaitlistValues) => {
-    // TODO: Connect to backend/email service (e.g. Resend, SendGrid, or Mailchimp)
-    console.log('Waitlist submission:', data);
-
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 800));
-    setIsSubmitted(true);
+    setSubmitError(null);
+    try {
+      const honeypot = (document.getElementById('wl-website') as HTMLInputElement | null)?.value ?? '';
+      const res = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...data, website: honeypot }),
+      });
+      if (!res.ok) {
+        throw new Error(`Request failed (${res.status})`);
+      }
+      setIsSubmitted(true);
+    } catch (err) {
+      setSubmitError("Something went wrong. Please try again, or email us directly.");
+    }
   };
 
   return (
@@ -153,6 +163,16 @@ export function Waitlist() {
                         )}
                       />
 
+                      <input
+                        type="text"
+                        id="wl-website"
+                        name="website"
+                        autoComplete="off"
+                        tabIndex={-1}
+                        aria-hidden="true"
+                        className="absolute -left-[9999px] w-0 h-0 opacity-0"
+                      />
+
                       <Button
                         type="submit"
                         className="w-full h-14 text-lg rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground shadow-sm transition-all font-semibold"
@@ -161,6 +181,12 @@ export function Waitlist() {
                       >
                         {form.formState.isSubmitting ? "Joining..." : "Join the FerLo waitlist"}
                       </Button>
+
+                      {submitError && (
+                        <p role="alert" className="text-sm text-destructive text-center">
+                          {submitError}
+                        </p>
+                      )}
                     </form>
                   </Form>
                 </motion.div>
