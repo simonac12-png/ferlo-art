@@ -4,10 +4,12 @@ import { routes as authRoutes } from "./_routes/auth";
 import { routes as contentRoutes } from "./_routes/content";
 import { routes as mediaRoutes } from "./_routes/media";
 import { routes as popupRoutes } from "./_routes/popups";
+import { routes as setupRoutes } from "./_routes/setup";
 
 export const config = { runtime: "nodejs" };
 
 const routes: Route[] = [
+  ...setupRoutes,
   ...authRoutes,
   ...contentRoutes,
   ...mediaRoutes,
