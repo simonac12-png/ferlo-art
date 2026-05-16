@@ -80,5 +80,43 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(502).json({ error: "Failed to send" });
   }
 
+  const proto = (req.headers["x-forwarded-proto"] as string) ?? "https";
+  const host = req.headers.host;
+  const iconUrl = host ? `${proto}://${host}/icon-32.png` : null;
+
+  const safeName = escapeHtml(name);
+  const customerText = [
+    `Dear ${name},`,
+    ``,
+    `Welcome to the magic!`,
+    ``,
+    `Thank you for joining the waitlist! We'll be in touch soon when it's time to bring your child's creations to life.`,
+    ``,
+    `If in the meantime you have any wish regarding functionalities FerLo would like you to offer, we will be more than happy to hear from you. Just reply back to this email.`,
+    ``,
+    `Your FerLo Team`,
+  ].join("\n");
+
+  const customerHtml = [
+    `<p>Dear ${safeName},</p>`,
+    `<p><strong>Welcome to the magic!</strong></p>`,
+    `<p>Thank you for joining the waitlist! We'll be in touch soon when it's time to bring your child's creations to life.</p>`,
+    `<p>If in the meantime you have any wish regarding functionalities FerLo would like you to offer, we will be more than happy to hear from you. Just reply back to this email.</p>`,
+    `<p>Your FerLo Team,${iconUrl ? `<br/><img src="${iconUrl}" alt="FerLo" width="32" height="32" style="margin-top:8px;" />` : ""}</p>`,
+  ].join("");
+
+  const { error: customerError } = await resend.emails.send({
+    from,
+    to: [email],
+    replyTo: to,
+    subject: "Welcome to the FerLo waitlist",
+    text: customerText,
+    html: customerHtml,
+  });
+
+  if (customerError) {
+    console.error("[waitlist] Confirmation email to customer failed", customerError);
+  }
+
   return res.status(200).json({ ok: true });
 }
