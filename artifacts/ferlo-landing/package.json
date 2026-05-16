@@ -9,6 +9,11 @@
     "serve": "vite preview --config vite.config.ts --host 0.0.0.0",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
+  "dependencies": {
+    "@vercel/blob": "^0.27.3",
+    "@workspace/api-zod": "workspace:*",
+    "react-router-dom": "^6.30.0"
+  },
   "devDependencies": {
     "@hookform/resolvers": "^3.10.0",
     "@radix-ui/react-dialog": "^1.1.7",

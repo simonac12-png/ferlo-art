@@ -1,33 +1,36 @@
-import React from 'react';
+import type { FooterContent } from "@workspace/api-zod";
 
-export function Footer() {
+export function Footer({ content }: { content: FooterContent }) {
   return (
     <footer className="bg-background py-12 border-t border-border">
       <div className="container mx-auto px-4 sm:px-6 flex flex-col items-center">
         <a href="#" className="mb-4">
           <img
-            src="/ferlo-icon.png"
-            alt="FerLo Icon"
-            width={40}
-            height={40}
+            src={content.icon.url}
+            alt={content.icon.alt}
+            width={content.icon.width}
+            height={content.icon.height}
             loading="lazy"
             decoding="async"
             className="h-10 w-auto opacity-80 hover:opacity-100 transition-opacity dark:brightness-110"
           />
         </a>
 
-        <p className="text-lg font-semibold text-foreground mb-8">Where art meets AI</p>
+        <p className="text-lg font-semibold text-foreground mb-8">{content.tagline}</p>
 
         <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm text-muted-foreground font-medium">
-          <a href="#" className="hover:text-primary transition-colors">About</a>
-          <a href="#" className="hover:text-primary transition-colors">Privacy</a>
-          <a href="#" className="hover:text-primary transition-colors">Contact</a>
-          <a href="#" className="hover:text-primary transition-colors">Instagram</a>
+          {content.links.map((link) => (
+            <a
+              key={`${link.label}-${link.href}`}
+              href={link.href}
+              className="hover:text-primary transition-colors"
+            >
+              {link.label}
+            </a>
+          ))}
         </div>
 
-        <p className="text-xs text-muted-foreground/60">
-          © 2025 FerLo. All rights reserved.
-        </p>
+        <p className="text-xs text-muted-foreground/60">{content.copyright}</p>
       </div>
     </footer>
   );

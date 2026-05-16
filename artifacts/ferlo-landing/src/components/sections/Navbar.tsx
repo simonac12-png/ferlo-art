@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useTheme } from '@/lib/theme';
+import type { NavbarContent } from '@workspace/api-zod';
 
 function SunIcon() {
   return (
@@ -26,7 +27,7 @@ function MoonIcon() {
   );
 }
 
-export function Navbar() {
+export function Navbar({ content }: { content: NavbarContent }) {
   const [scrolled, setScrolled] = useState(false);
   const { theme, toggleTheme } = useTheme();
 
@@ -52,10 +53,10 @@ export function Navbar() {
       <div className="container mx-auto px-4 sm:px-6 flex items-center justify-between">
         <a href="#" className="flex items-center gap-2">
           <img
-            src="/ferlo-favicon.png"
-            alt="FerLo Logo"
-            width={40}
-            height={40}
+            src={content.logo.url}
+            alt={content.logo.alt}
+            width={content.logo.width}
+            height={content.logo.height}
             loading="eager"
             decoding="async"
             className="h-8 md:h-10 w-auto dark:brightness-110"
@@ -63,8 +64,15 @@ export function Navbar() {
         </a>
 
         <div className="hidden md:flex items-center gap-8 text-sm font-semibold text-foreground/80">
-          <a href="#how-it-works" className="hover:text-primary transition-colors">How it works</a>
-          <a href="#waitlist" className="hover:text-primary transition-colors">Waitlist</a>
+          {content.navLinks.map((link) => (
+            <a
+              key={`${link.label}-${link.href}`}
+              href={link.href}
+              className="hover:text-primary transition-colors"
+            >
+              {link.label}
+            </a>
+          ))}
         </div>
 
         <div className="flex items-center gap-3">
@@ -77,11 +85,11 @@ export function Navbar() {
           </button>
 
           <a
-            href="#waitlist"
+            href={content.ctaHref}
             className="px-5 py-2.5 bg-primary text-primary-foreground rounded-full text-sm font-semibold hover:bg-primary/90 transition-colors shadow-sm"
             data-testid="nav-join-waitlist"
           >
-            Join waitlist
+            {content.ctaLabel}
           </a>
         </div>
       </div>

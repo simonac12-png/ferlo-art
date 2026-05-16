@@ -10,13 +10,21 @@
   },
   "private": true,
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
     "@types/node": "catalog:",
     "@vercel/node": "^3.2.0",
     "prettier": "^3.8.3",
     "typescript": "~5.9.3"
   },
   "dependencies": {
+    "@neondatabase/serverless": "^0.10.4",
     "@replit/connectors-sdk": "^0.4.1",
+    "@vercel/blob": "^0.27.3",
+    "@workspace/api-zod": "workspace:*",
+    "@workspace/db": "workspace:*",
+    "bcryptjs": "^2.4.3",
+    "drizzle-orm": "catalog:",
+    "jose": "^5.9.6",
     "resend": "^4.0.0",
     "zod": "^3.23.8"
   }

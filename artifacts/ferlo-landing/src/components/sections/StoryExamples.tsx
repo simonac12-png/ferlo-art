@@ -1,41 +1,17 @@
-import React from 'react';
 import { motion } from 'framer-motion';
+import type { StoryExamplesContent } from '@workspace/api-zod';
 
-export function StoryExamples() {
-  const stories = [
-    {
-      title: "The Robot Who Learned to Feel",
-      character: "Beepo",
-      source: "a child's clay robot",
-      theme: "What is AI?",
-      preview: "Beepo was built with shiny metal and a very big heart. But when he met a sad little bird, he didn't know how to compute sadness. With a little help, Beepo learns that some things can't be calculated—they just have to be felt."
-    },
-    {
-      title: "The Wobbly Tower",
-      character: "Stony",
-      source: "a pebble tower",
-      theme: "Creativity & Problem Solving",
-      preview: "Stony was the tallest tower in the garden, but the wind kept knocking him down! Instead of giving up, Stony figures out a new way to stack himself, learning that building something new sometimes means looking at the pieces differently."
-    },
-    {
-      title: "The Rainbow Weaver",
-      character: "Lumie",
-      source: "a yarn craft",
-      theme: "Kindness",
-      preview: "Lumie loved spinning bright, colorful threads. When the town lost its colors to a gloomy storm, Lumie realized that sharing her colorful threads made the world bright again. A story about giving and the warmth of sharing."
-    }
-  ];
-
+export function StoryExamples({ content }: { content: StoryExamplesContent }) {
   return (
     <section className="py-24 bg-muted/30 dark:bg-muted/10">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">More than a picture</h2>
-          <p className="text-xl text-muted-foreground">Every character stars in a personalized story that sparks imagination and teaches gentle lessons.</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">{content.heading}</h2>
+          <p className="text-xl text-muted-foreground">{content.subheading}</p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {stories.map((story, index) => (
+          {content.stories.map((story, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, scale: 0.95 }}

@@ -1,17 +1,7 @@
-import React from "react";
 import { motion } from "framer-motion";
+import type { ComingNextContent } from "@workspace/api-zod";
 
-export function ComingNext() {
-  const items = [
-    { title: "Narrated stories", description: "In the child's voice" },
-    { title: "Multilingual", description: "Story generation in any language" },
-    {
-      title: "Animated shorts",
-      description: "Cartoon videos of their characters",
-    },
-    { title: "Family library", description: "A shared shelf of all creations" },
-  ];
-
+export function ComingNext({ content }: { content: ComingNextContent }) {
   return (
     <section className="py-24 bg-foreground dark:bg-muted/40 text-background dark:text-foreground">
       <div className="container mx-auto px-4 sm:px-6">
@@ -23,10 +13,9 @@ export function ComingNext() {
             transition={{ duration: 0.6 }}
             className="flex-1 max-w-xl"
           >
-            <h2 className="text-4xl font-bold mb-6 text-background dark:text-foreground">Coming Next</h2>
+            <h2 className="text-4xl font-bold mb-6 text-background dark:text-foreground">{content.heading}</h2>
             <p className="text-xl text-background/70 dark:text-foreground/70 mb-8 font-light">
-              We are building a magical platform that grows with your child's
-              creativity. This is just the beginning.
+              {content.subheading}
             </p>
           </motion.div>
 
@@ -38,7 +27,7 @@ export function ComingNext() {
             className="flex-1 w-full"
           >
             <ul className="space-y-6">
-              {items.map((item, index) => (
+              {content.items.map((item, index) => (
                 <li
                   key={index}
                   className="flex items-start gap-4 pb-6 border-b border-background/10 dark:border-foreground/10 last:border-0 last:pb-0"

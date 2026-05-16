@@ -1,7 +1,7 @@
-import React from 'react';
 import { motion } from 'framer-motion';
+import type { MissionContent } from '@workspace/api-zod';
 
-export function Mission() {
+export function Mission({ content }: { content: MissionContent }) {
   return (
     <section className="py-32 bg-background relative overflow-hidden">
       <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full filter blur-3xl opacity-50 transform translate-x-1/2 -translate-y-1/2" />
@@ -17,10 +17,10 @@ export function Mission() {
             className="flex justify-center mb-10"
           >
             <img
-              src="/ferlo-icon.png"
-              alt="FerLo Icon"
-              width={80}
-              height={80}
+              src={content.icon.url}
+              alt={content.icon.alt}
+              width={content.icon.width}
+              height={content.icon.height}
               loading="lazy"
               decoding="async"
               className="h-20 w-20 opacity-80 dark:brightness-110"
@@ -34,7 +34,7 @@ export function Mission() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-3xl md:text-4xl lg:text-5xl font-medium text-foreground leading-relaxed"
           >
-            "FerLo brings children's handcrafted creations to life through AI-powered characters and stories. It helps children feel proud of their imagination while gently teaching them what AI is, how it works, and how it can support human creativity."
+            "{content.quote}"
           </motion.h2>
         </div>
       </div>

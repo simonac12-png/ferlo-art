@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { motion, AnimatePresence } from 'framer-motion';
+import type { WaitlistContent } from '@workspace/api-zod';
 
 import {
   Form,
@@ -32,7 +33,7 @@ const waitlistSchema = z.object({
 
 type WaitlistValues = z.infer<typeof waitlistSchema>;
 
-export function Waitlist() {
+export function Waitlist({ content }: { content: WaitlistContent }) {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
 
@@ -59,8 +60,8 @@ export function Waitlist() {
         throw new Error(`Request failed (${res.status})`);
       }
       setIsSubmitted(true);
-    } catch (err) {
-      setSubmitError("Something went wrong. Please try again, or email us directly.");
+    } catch {
+      setSubmitError(content.errorBody);
     }
   };
 
@@ -74,8 +75,8 @@ export function Waitlist() {
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Be the first to experience FerLo</h2>
-            <p className="text-lg text-muted-foreground">Join our pre-launch waitlist. Spaces are limited as we carefully craft our first stories.</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">{content.heading}</h2>
+            <p className="text-lg text-muted-foreground">{content.subheading}</p>
           </div>
 
           <div className="bg-card rounded-3xl p-8 md:p-12 shadow-sm border border-border">
@@ -179,7 +180,7 @@ export function Waitlist() {
                         disabled={form.formState.isSubmitting}
                         data-testid="button-submit-waitlist"
                       >
-                        {form.formState.isSubmitting ? "Joining..." : "Join the FerLo waitlist"}
+                        {form.formState.isSubmitting ? content.submitPending : content.submitLabel}
                       </Button>
 
                       {submitError && (
@@ -203,9 +204,9 @@ export function Waitlist() {
                       <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </div>
-                  <h3 className="text-3xl font-bold text-foreground mb-4">Welcome to the magic</h3>
+                  <h3 className="text-3xl font-bold text-foreground mb-4">{content.successHeading}</h3>
                   <p className="text-lg text-muted-foreground max-w-md">
-                    Thank you for joining the waitlist! We'll be in touch soon when it's time to bring your child's creations to life.
+                    {content.successBody}
                   </p>
                 </motion.div>
               )}

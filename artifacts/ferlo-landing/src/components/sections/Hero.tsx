@@ -1,7 +1,7 @@
-import React from 'react';
 import { motion } from 'framer-motion';
+import type { HeroContent } from '@workspace/api-zod';
 
-export function Hero() {
+export function Hero({ content }: { content: HeroContent }) {
   return (
     <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
@@ -19,10 +19,10 @@ export function Hero() {
               className="mb-8 flex justify-center lg:justify-start"
             >
               <img
-                src="/ferlo-logo.png"
-                alt="FerLo"
-                width={1021}
-                height={304}
+                src={content.logo.url}
+                alt={content.logo.alt}
+                width={content.logo.width}
+                height={content.logo.height}
                 loading="eager"
                 fetchPriority="high"
                 decoding="async"
@@ -31,26 +31,26 @@ export function Hero() {
               />
             </motion.div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground mb-6 leading-[1.1]">
-              Where children's <br className="hidden md:block" />
-              <span className="text-primary italic">creations</span> come to life
+              {content.headlineLine1} <br className="hidden md:block" />
+              <span className="text-primary italic">{content.headlineHighlight}</span> {content.headlineLine2}
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-              FerLo transforms children's handmade art into story characters and personalized AI-powered stories that honor every handmade detail.
+              {content.subheading}
             </p>
             <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
               <a
-                href="#waitlist"
+                href={content.primaryCta.href}
                 className="w-full sm:w-auto px-8 py-4 bg-primary text-primary-foreground rounded-full font-semibold text-lg hover:bg-primary/90 transition-colors shadow-sm"
                 data-testid="hero-join-waitlist"
               >
-                Join the waitlist
+                {content.primaryCta.label}
               </a>
               <a
-                href="#how-it-works"
+                href={content.secondaryCta.href}
                 className="w-full sm:w-auto px-8 py-4 bg-card text-foreground border border-border rounded-full font-semibold text-lg hover:bg-muted transition-colors"
                 data-testid="hero-how-it-works"
               >
-                See how it works
+                {content.secondaryCta.label}
               </a>
             </div>
           </motion.div>
@@ -71,10 +71,10 @@ export function Hero() {
               <div className="relative z-10 w-full flex items-center gap-3">
                 <div className="flex-1 aspect-[3/4] bg-muted/30 rounded-2xl shadow-lg border border-border overflow-hidden">
                   <img
-                    src="/child-drawing.jpg"
-                    alt="Child's original drawing"
-                    width={1200}
-                    height={1600}
+                    src={content.leftImage.url}
+                    alt={content.leftImage.alt}
+                    width={content.leftImage.width}
+                    height={content.leftImage.height}
                     loading="eager"
                     fetchPriority="high"
                     decoding="async"
@@ -90,10 +90,10 @@ export function Hero() {
 
                 <div className="flex-1 aspect-[3/4] bg-muted/30 rounded-2xl shadow-lg border border-border overflow-hidden">
                   <img
-                    src="/ferlo-character.jpg"
-                    alt="FerLo Character"
-                    width={1200}
-                    height={1800}
+                    src={content.rightImage.url}
+                    alt={content.rightImage.alt}
+                    width={content.rightImage.width}
+                    height={content.rightImage.height}
                     loading="eager"
                     fetchPriority="high"
                     decoding="async"
