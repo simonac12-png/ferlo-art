@@ -1,6 +1,6 @@
 import { neon } from "@neondatabase/serverless";
 import { drizzle } from "drizzle-orm/neon-http";
-import * as schema from "./schema";
+import * as schema from "./schema/index.js";
 
 const connectionString =
   process.env.POSTGRES_URL ||
@@ -19,4 +19,4 @@ if (!connectionString) {
 const sql = neon(connectionString);
 export const db = drizzle(sql, { schema });
 
-export * from "./schema";
+export * from "./schema/index.js";
