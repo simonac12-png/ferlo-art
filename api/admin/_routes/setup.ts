@@ -1,6 +1,6 @@
 import bcrypt from "bcryptjs";
 import { neon } from "@neondatabase/serverless";
-import type { Route } from "../../_lib/router";
+import type { Route } from "../../_lib/router.js";
 
 /**
  * Idempotent first-run bootstrap. Creates the 4 tables, seeds default

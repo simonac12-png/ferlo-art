@@ -6,9 +6,9 @@ import {
   sectionSchemas,
   type SectionKey,
 } from "@workspace/api-zod";
-import type { Route } from "../../_lib/router";
-import { requireSession } from "../../_lib/auth";
-import { parseBody } from "../../_lib/json";
+import type { Route } from "../../_lib/router.js";
+import { requireSession } from "../../_lib/auth.js";
+import { parseBody } from "../../_lib/json.js";
 
 const sectionKeySchema = z.enum(SECTION_KEYS);
 

@@ -3,9 +3,9 @@ import { z } from "zod";
 import { db, popupsTable } from "@workspace/db";
 import { popupSchema } from "@workspace/api-zod";
 
-import { requireSession } from "../../_lib/auth";
-import { parseBody } from "../../_lib/json";
-import type { Route } from "../../_lib/router";
+import { requireSession } from "../../_lib/auth.js";
+import { parseBody } from "../../_lib/json.js";
+import type { Route } from "../../_lib/router.js";
 
 const updateSchema = popupSchema.partial();
 

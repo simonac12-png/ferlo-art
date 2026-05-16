@@ -2,15 +2,15 @@ import bcrypt from "bcryptjs";
 import { eq } from "drizzle-orm";
 import { z } from "zod";
 import { db, adminUsersTable } from "@workspace/db";
-import { parseBody } from "../../_lib/json";
-import { rateLimit, clientIp } from "../../_lib/rate-limit";
+import { parseBody } from "../../_lib/json.js";
+import { rateLimit, clientIp } from "../../_lib/rate-limit.js";
 import {
   clearSessionCookie,
   readSession,
   setSessionCookie,
   signSession,
-} from "../../_lib/auth";
-import type { Route } from "../../_lib/router";
+} from "../../_lib/auth.js";
+import type { Route } from "../../_lib/router.js";
 
 const loginSchema = z.object({
   email: z.string().trim().toLowerCase().email(),

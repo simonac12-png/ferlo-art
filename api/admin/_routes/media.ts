@@ -10,9 +10,9 @@ import {
   popupsTable,
 } from "@workspace/db";
 
-import { requireSession } from "../../_lib/auth";
-import { parseBody } from "../../_lib/json";
-import type { Route } from "../../_lib/router";
+import { requireSession } from "../../_lib/auth.js";
+import { parseBody } from "../../_lib/json.js";
+import type { Route } from "../../_lib/router.js";
 
 const ALLOWED_MIME = [
   "image/jpeg",
