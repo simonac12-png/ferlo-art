@@ -32,12 +32,16 @@ export type NavbarContent = z.infer<typeof navbarSchema>;
 /* ---------- Hero ---------- */
 export const heroSchema = z.object({
   logo: imageRefSchema,
+  badge: z.string().default("Early access now open — founding spots are limited"),
   headlineLine1: z.string().min(1),
   headlineHighlight: z.string().min(1),
   headlineLine2: z.string().min(1),
   subheading: z.string().min(1),
   primaryCta: linkSchema,
   secondaryCta: linkSchema,
+  ctaNote: z.string().default("Free to join · Be the first in when stories launch"),
+  beforeLabel: z.string().default("Their masterpiece"),
+  afterLabel: z.string().default("Their story hero"),
   leftImage: imageRefSchema,
   rightImage: imageRefSchema,
 });
@@ -229,6 +233,7 @@ export const defaultContent: {
       width: 1021,
       height: 304,
     },
+    badge: "Early access now open — founding spots are limited",
     headlineLine1: "Where children's",
     headlineHighlight: "creations",
     headlineLine2: "come to life",
@@ -236,6 +241,9 @@ export const defaultContent: {
       "FerLo transforms children's handmade art into story characters and personalized AI-powered stories that honor every handmade detail.",
     primaryCta: { label: "Join the waitlist", href: "#waitlist" },
     secondaryCta: { label: "See how it works", href: "#how-it-works" },
+    ctaNote: "Free to join · Be the first in when stories launch",
+    beforeLabel: "Their masterpiece",
+    afterLabel: "Their story hero",
     leftImage: {
       url: "/child-drawing.jpg",
       alt: "Child's original drawing",

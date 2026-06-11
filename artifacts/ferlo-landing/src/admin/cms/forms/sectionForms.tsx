@@ -87,6 +87,7 @@ export function HeroForm() {
   return (
     <div className="space-y-6">
       <ImageField<HeroContent> name="logo" label="Logo" />
+      <TextField<HeroContent> name="badge" label="Announcement badge" />
       <div className="grid md:grid-cols-3 gap-3">
         <TextField<HeroContent> name="headlineLine1" label="Headline (line 1)" />
         <TextField<HeroContent>
@@ -104,9 +105,14 @@ export function HeroForm() {
         <LinkField<HeroContent> name="primaryCta" label="Primary CTA" />
         <LinkField<HeroContent> name="secondaryCta" label="Secondary CTA" />
       </div>
+      <TextField<HeroContent> name="ctaNote" label="Note under CTAs" />
       <div className="grid md:grid-cols-2 gap-4">
         <ImageField<HeroContent> name="leftImage" label="Left image" />
         <ImageField<HeroContent> name="rightImage" label="Right image" />
+      </div>
+      <div className="grid md:grid-cols-2 gap-4">
+        <TextField<HeroContent> name="beforeLabel" label="Left image caption" />
+        <TextField<HeroContent> name="afterLabel" label="Right image caption" />
       </div>
     </div>
   );
